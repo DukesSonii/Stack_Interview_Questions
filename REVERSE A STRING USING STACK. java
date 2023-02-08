@@ -1,0 +1,27 @@
+import java.util.*;
+
+public class Main
+{
+    	public static String reversestring(String str){
+    	    Stack<Character> s = new Stack<>();
+    	    int idx = 0;
+    	    while(idx < str.length()){
+    	        s.push(str.charAt(idx));
+    	        idx++;
+    	    }
+    	    
+    	    //String ko reverse krne ke liye new resultant string banai
+    	    StringBuilder result = new StringBuilder("");   //initialization
+    	    while(!s.isEmpty()){        //ek ek kar stack se char bahar nikala kab tak 
+    	        char curr = s.pop();    //jab tak vo empty nh ho jata
+    	        result.append(curr);
+    	    }
+    	    // Sb or str ka type alag hota h toh sb ki val jab str mai store karani ho toh toString ka use krte h
+    	    return result.toString();       
+    	}
+	public static void main(String[] args) {
+	    String str = "HElloWORlD";
+	    System.out.println(reversestring(str));
+	}
+}
+
